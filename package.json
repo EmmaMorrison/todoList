@@ -4,9 +4,7 @@
   "description": "A simple Node.js Todo API",
   "main": "index.js",
   "scripts": {
-    "watch_sass": "node-sass public/sass/main.scss public/styles/app.css -w",
-    "server": "nodemon server.js",
-    "start": "npm-run-all --parallel server watch_sass",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Emma",
