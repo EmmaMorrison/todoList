@@ -1,4 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis:300,400,700");
+
+:root {
+  --col-grey-1: #fefedf;
+  --col-grey-2: #828d8f;
+
+  --col-blue-1: #4560e1;
+  --col-blue-2: #464555;
+
+  --col-delete: #ff5f6a;
+
+  --col-main: #f0edff;
+
+  --gradient-1: linear-gradient(to right bottom, #f9f871, #ffc359, #ff5c9b, #cf53c8, #4560e1);
+  --gradient-2: linear-gradient(to right bottom, #464555, #4560e1, #aba9bb, #ff5f6a);
+}
+
 *,
 *::before,
 *::after {
@@ -11,7 +27,7 @@ html {
   font-size: 62.5%; }
   @media only screen and (max-width: 600px) {
     html {
-      font-size: 50%; } }
+      font-size: 60%; } }
 
 body {
   font-family: "Dosis", sans-serif;
@@ -62,21 +78,22 @@ body {
   text-align: center; }
   .header__title {
     font-size: 10rem;
-    color: #40C4FF;
+    color: var(--col-blue-2);
     font-weight: 300; }
     .header__title--span {
       font-weight: 700;
-      color: #64FFDA; }
+      color: var(--col-grey-2); }
   .header__subtitle {
     font-size: 2.8rem;
-    color: #18FFFF;
+    color: var(--col-blue-1);
     font-weight: 300; }
+
 
 body {
   display: flex;
   justify-content: center;
   margin: 3rem;
-  background: linear-gradient(135deg, #40C4FF 22%, #64ffda 100%);
+  background: var(--gradient-2);
   background-repeat: no-repeat;
   min-height: 100vh; }
 
@@ -88,9 +105,24 @@ body {
   overflow: hidden;
   width: 80vw;
   height: auto;
-  background: #eee;
+  background: var(--col-main);
   border-radius: .5rem;
   box-shadow: 4px 6px 6px rgba(0, 0, 0, 0.3); }
+
+  @media only screen and (max-width: 600px) {
+    body {
+      margin: 0;
+    }
+    .main {
+      width: 100%;
+      background-color: rgba(255,255,255,.6); }
+
+    .header__title {
+      color: var(--col-main);
+      }
+    .header__title--span {
+      color: var(--col-main);
+      } }
 
 .header {
   display: inherit;
@@ -109,25 +141,24 @@ body {
     background: none;
     font-family: "Dosis", sans-serif;
     font-weight: 300;
-    color: #448AFF;
+    color: var(--col-blue-1);
     font-size: 2.2rem;
-    border-bottom: solid 1px #64FFDA;
+    border-bottom: solid 1px var(--col-grey-2);
     transition: all .3s; }
     .form__input:focus {
-      border-bottom: solid 1px #18FFFF; }
+      border-bottom: solid 1px var(--col-blue-2); }
     @media only screen and (max-width: 800px) {
       .form__input {
-        width: 80%;
+        width: 90%;
         padding-left: 1rem; } }
 
 .list {
   align-self: center;
-  flex: 1 0 1;
   width: 60%;
   margin-top: 2rem;
   font-family: "Dosis", sans-serif;
   font-size: 2rem;
-  color: #448AFF;
+  color: var(--col-blue-1);
   list-style-type: none; }
   .list__task {
     display: flex;
@@ -144,13 +175,13 @@ body {
       transition: all .3s; }
       .list__task--icon-span::before {
         content: "\e00b";
-        color: #18FFFF; }
+        color: var(--col-grey-2); }
       .list__task--icon-span:hover {
         transform: scale(1.1);
         cursor: pointer; }
         .list__task--icon-span:hover::before {
           content: "\e00e";
-          color: #ec7b29; }
+          color: var(--col-delete); }
       .list__task--icon-span:active {
         transform: translateY(2px); }
       @media only screen and (max-width: 800px) {
@@ -159,10 +190,11 @@ body {
     .list__task--par {
       flex-basis: 100%;
       padding-left: 1rem;
+      border-bottom: transparent 1px solid;
       transition: all .3s;
       cursor: pointer; }
       .list__task--par:hover {
-        border-bottom: 1px solid #18FFFF;
+        border-bottom: 1px solid var(--col-grey-1);
         transform: translateY(-2px);
         box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.3); }
     @media only screen and (max-width: 800px) {
@@ -174,15 +206,26 @@ body {
       font-size: 2.3rem; } }
   @media only screen and (max-width: 600px) {
     .list {
-      font-size: 2.3rem; } }
+      font-size: 2.3rem; }
+    .list__task--par:hover {
+      border-bottom: 1px solid transparent;
+      transform: translateY(0);
+      box-shadow: none; }
+
+    .list__task--par:active {
+      font-weight: 700;
+      text-shadow: 3px 2px 3px rgba(255,96,107,.6);
+    }
+    }
+
 
 .complete {
   text-decoration: line-through;
-  color: #18FFFF; }
+  color: var(--col-grey-2); }
   .complete:hover {
     transform: none;
     box-shadow: none; }
 
 .icon_complete::before {
   content: "\e007";
-  color: #448AFF; }
+  color: var(--col-blue-2); }
