@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Dosis:300,400,700");
+@import url("https://fonts.googleapis.com/css?Noto+Sans:400,700");
 
 :root {
   --col-grey-1: #fefedf;
@@ -7,12 +7,14 @@
   --col-blue-1: #4560e1;
   --col-blue-2: #464555;
 
-  --col-delete: #ff5f6a;
+  --col-delete: #fc0d1d;
 
   --col-main: #f0edff;
 
   --gradient-1: linear-gradient(to right bottom, #f9f871, #ffc359, #ff5c9b, #cf53c8, #4560e1);
-  --gradient-2: linear-gradient(to right bottom, #464555, #4560e1, #aba9bb, #ff5f6a);
+  --gradient-2: linear-gradient(to right bottom, #464555, #aba9bb);
+
+  --font-main: "Noto Sans", sans-serif;
 }
 
 *,
@@ -30,8 +32,8 @@ html {
       font-size: 60%; } }
 
 body {
-  font-family: "Dosis", sans-serif;
-  font-weight: 300;
+  font-family: var(--font-main);
+  font-weight: 400;
   line-height: 1.6; }
 
 @font-face {
@@ -79,14 +81,14 @@ body {
   .header__title {
     font-size: 10rem;
     color: var(--col-blue-2);
-    font-weight: 300; }
+    font-weight: 400; }
     .header__title--span {
       font-weight: 700;
       color: var(--col-grey-2); }
   .header__subtitle {
     font-size: 2.8rem;
     color: var(--col-blue-1);
-    font-weight: 300; }
+    font-weight: 400; }
 
 
 body {
@@ -142,7 +144,7 @@ body {
     height: 5rem;
     padding-left: 2rem;
     background: none;
-    font-family: "Dosis", sans-serif;
+    font-family: var(--font-main);
     font-weight: 300;
     color: var(--col-blue-1);
     font-size: 2.2rem;
@@ -159,7 +161,7 @@ body {
   align-self: center;
   width: 60%;
   margin-top: 2rem;
-  font-family: "Dosis", sans-serif;
+  font-family: var(--font-main);
   font-size: 2rem;
   color: var(--col-blue-1);
   list-style-type: none; }
